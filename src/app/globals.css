@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Accent = rouge logo Four Points (pinwheel), pas d’orange */
+:root {
+  --brand: #e10600;
+  --brand-dark: #b80500;
+  --teal: #3a7190;
+  --teal-soft: #eef5f8;
+  --coral: #e10600;
+  --ink: #131415;
+  --muted: #5c6165;
+  --line: #b3c0cb;
+  --bg: #ffffff;
+  --wash: #ffeceb;
+  --orange: var(--brand);
+  --orange-dark: var(--brand-dark);
+}
+
+@theme inline {
+  --color-orange: var(--brand);
+  --color-teal: var(--teal);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 420px at 90% -8%, rgba(225, 6, 0, 0.08), transparent 55%),
+    radial-gradient(700px 380px at -5% 25%, rgba(58, 113, 144, 0.12), transparent 50%),
+    #fff;
+  font-family: var(--font-body), "Trade Gothic", system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(225, 6, 0, 0.18);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-rise-2 {
+  animation: rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.animate-rise-3 {
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.kenburns {
+  animation: kenburns 12s ease-out forwards;
+}
+
+.carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 20px 10px;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel > * {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-display), "Clarendon", Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14) !important;
+  overflow: hidden;
+  border-radius: 14px !important;
+  margin-bottom: 210px !important;
+  margin-right: 14px !important;
+}
+
+.leaflet-control-zoom a {
+  width: 38px !important;
+  height: 38px !important;
+  line-height: 38px !important;
+  color: #131415 !important;
+  border: none !important;
+}
+
+.leaflet-container {
+  font-family: var(--font-body), system-ui, sans-serif;
+  background: #eef5f8;
+}
