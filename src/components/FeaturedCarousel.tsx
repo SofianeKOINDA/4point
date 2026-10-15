@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { featured } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { IconPlay } from "./Icons";
+import { SmartImage } from "./SmartImage";
 
 export function FeaturedCarousel() {
   const [index, setIndex] = useState(0);
@@ -48,13 +48,15 @@ export function FeaturedCarousel() {
               i === index ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Image
+            <SmartImage
               src={slide.image}
               alt={tx(slide.title)}
               fill
               priority={i === 0}
               className={`object-cover ${i === index ? "kenburns" : ""}`}
               sizes="(max-width: 512px) 100vw, 480px"
+              unoptimized
+              loading={i === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { PageShell } from "@/components/PageShell";
+import { SmartImage } from "@/components/SmartImage";
 import { hotel, tenActivities } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
 
@@ -18,13 +18,15 @@ export default function TenPage() {
       }
     >
       <div className="relative h-52 overflow-hidden rounded-[28px]">
-        <Image
+        <SmartImage
           src="/hotel/ten/escalade.jpg"
           alt="TEN"
           fill
           className="object-cover"
           priority
           sizes="500px"
+          unoptimized
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <p className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white">
@@ -41,7 +43,7 @@ export default function TenPage() {
             className="overflow-hidden rounded-[24px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
           >
             <div className="relative h-40 w-full">
-              <Image
+              <SmartImage
                 src={item.image}
                 alt={tx(item.title)}
                 fill

@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow, Zilla_Slab } from "next/font/google";
 import { BottomNav } from "@/components/BottomNav";
+import { InstallPrompt } from "@/components/InstallPrompt";
+import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import "./globals.css";
 
@@ -21,12 +23,23 @@ export const metadata: Metadata = {
   title: "Four Points · Guest Guide",
   description:
     "Guest guide — Four Points by Sheraton Dakar Diamniadio. Hotel, TEN, transport, Discover Dakar & Senegal.",
+  applicationName: "Guest Guide",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Guest Guide",
+  },
+  icons: {
+    icon: "/icon-192.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#3a7190",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -36,7 +49,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <LanguageProvider>
           {children}
           <BottomNav />
+          <InstallPrompt />
         </LanguageProvider>
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

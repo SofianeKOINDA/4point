@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import type { GuideItem } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
+import { SmartImage } from "./SmartImage";
 
 type Props = {
   id?: string;
@@ -49,7 +49,7 @@ export function SectionCarousel({
                 : undefined;
           const body = (
             <>
-              <Image
+              <SmartImage
                 src={item.image}
                 alt={tx(item.title)}
                 fill

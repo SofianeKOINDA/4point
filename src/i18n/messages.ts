@@ -65,6 +65,11 @@ const fr = {
   hello: "Bonjour",
   thanks: "Merci",
   howAreYou: "Ça va ?",
+  installTitle: "Ajoutez le guide à votre écran d’accueil",
+  installText: "Accès instantané pendant tout votre séjour, même hors-ligne.",
+  installButton: "Installer",
+  installIosHint: "Appuyez sur Partager puis « Sur l’écran d’accueil ».",
+  installDismiss: "Plus tard",
 };
 
 const en: typeof fr = {
@@ -130,6 +135,11 @@ const en: typeof fr = {
   hello: "Hello",
   thanks: "Thank you",
   howAreYou: "How are you?",
+  installTitle: "Add the guide to your home screen",
+  installText: "Instant access throughout your stay, even offline.",
+  installButton: "Install",
+  installIosHint: "Tap Share, then “Add to Home Screen”.",
+  installDismiss: "Later",
 };
 
 export const messages: Record<Lang, typeof fr> = { fr, en };

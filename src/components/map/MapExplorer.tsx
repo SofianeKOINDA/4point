@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -10,6 +9,7 @@ import {
 } from "@/data/places";
 import { useI18n } from "@/i18n/LanguageProvider";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { SmartImage } from "@/components/SmartImage";
 import { MapCanvas } from "./MapCanvas";
 
 const filters: Array<PlaceCategory | "all"> = [
@@ -171,7 +171,7 @@ export function MapExplorer() {
                   }`}
                 >
                   <div className="relative h-14 w-14 overflow-hidden rounded-xl">
-                    <Image
+                    <SmartImage
                       src={place.image}
                       alt={place.name}
                       fill
@@ -203,7 +203,7 @@ export function MapExplorer() {
           <article className="mx-auto max-w-lg overflow-hidden rounded-[28px] bg-white/95 shadow-[0_20px_60px_rgba(0,0,0,0.22)] backdrop-blur-xl animate-rise">
             <div className="flex gap-3 p-3">
               <div className="relative h-[104px] w-[96px] shrink-0 overflow-hidden rounded-2xl">
-                <Image
+                <SmartImage
                   src={selected.image}
                   alt={selected.name}
                   fill

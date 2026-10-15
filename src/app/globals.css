@@ -84,6 +84,43 @@ body {
   animation: kenburns 12s ease-out forwards;
 }
 
+/* Skeleton shimmer — affiché pendant le chargement (connexion lente) */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dans @layer components pour que les utilitaires Tailwind (ex. `absolute`)
+   puissent surcharger `position` — sinon le CSS hors-layer gagnerait. */
+@layer components {
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    background: #e7edf1;
+  }
+
+  .skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+    animation: shimmer 1.5s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton::after {
+      animation: none;
+    }
+  }
+}
+
 .carousel {
   display: flex;
   gap: 14px;

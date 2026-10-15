@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { PageShell } from "@/components/PageShell";
+import { SmartImage } from "@/components/SmartImage";
 import {
   discoverHotelPhone,
   getDiscoverDetail,
@@ -40,7 +40,7 @@ export default function DiscoverDetailPage() {
       backHref="/discover"
     >
       <div className="relative h-56 overflow-hidden rounded-[28px]">
-        <Image
+        <SmartImage
           src={detail.image}
           alt={tx(detail.title)}
           fill
