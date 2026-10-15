@@ -55,7 +55,6 @@ export function FeaturedCarousel() {
               priority={i === 0}
               className={`object-cover ${i === index ? "kenburns" : ""}`}
               sizes="(max-width: 512px) 100vw, 480px"
-              unoptimized
               loading={i === 0 ? "eager" : "lazy"}
             />
           </div>

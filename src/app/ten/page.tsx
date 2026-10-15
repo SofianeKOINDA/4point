@@ -25,7 +25,6 @@ export default function TenPage() {
           className="object-cover"
           priority
           sizes="500px"
-          unoptimized
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
