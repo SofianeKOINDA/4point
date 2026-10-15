@@ -70,6 +70,16 @@ const fr = {
   installButton: "Installer",
   installIosHint: "Appuyez sur Partager puis « Sur l’écran d’accueil ».",
   installDismiss: "Plus tard",
+  guideTitle: "Installer le guide",
+  guideSubtitle: "Ajoutez-le à votre écran d’accueil en 2 étapes.",
+  guideInstallNow: "Installer maintenant",
+  guideGotIt: "J’ai compris",
+  guideLabelShare: "Partager",
+  guideLabelMenu: "Menu",
+  guideStep1Ios: "Appuyez sur Partager, en bas de l’écran",
+  guideStep2Ios: "Choisissez « Sur l’écran d’accueil »",
+  guideStep1Android: "Ouvrez le menu (⋮), en haut à droite",
+  guideStep2Android: "Choisissez « Installer l’application »",
 };
 
 const en: typeof fr = {
@@ -140,6 +150,16 @@ const en: typeof fr = {
   installButton: "Install",
   installIosHint: "Tap Share, then “Add to Home Screen”.",
   installDismiss: "Later",
+  guideTitle: "Install the guide",
+  guideSubtitle: "Add it to your home screen in 2 steps.",
+  guideInstallNow: "Install now",
+  guideGotIt: "Got it",
+  guideLabelShare: "Share",
+  guideLabelMenu: "Menu",
+  guideStep1Ios: "Tap Share, at the bottom of the screen",
+  guideStep2Ios: "Choose “Add to Home Screen”",
+  guideStep1Android: "Open the menu (⋮), top right",
+  guideStep2Android: "Choose “Install app”",
 };
 
 export const messages: Record<Lang, typeof fr> = { fr, en };
