@@ -2,12 +2,7 @@
 
 import { IconFacebook, IconInstagram, IconLinkedin } from "@/components/Icons";
 import { PageShell } from "@/components/PageShell";
-import {
-  athletes,
-  emergencies,
-  hotel,
-  practical,
-} from "@/data/guide";
+import { emergencies, hotel, practical } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function InfosPage() {
@@ -52,28 +47,12 @@ export default function InfosPage() {
         </div>
       </section>
 
-      <section>
-        <h2 className="section-title mb-2">{t("athletesTitle")}</h2>
-        <p className="mb-3 text-sm text-[var(--muted)]">{t("athletesSubtitle")}</p>
-        <ul className="grid grid-cols-1 gap-2">
-          {athletes.map((item) => (
-            <li
-              key={typeof item === "string" ? item : item.fr}
-              className="rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm font-medium text-[var(--ink)]"
-            >
-              {tx(item)}
-            </li>
-          ))}
-        </ul>
-      </section>
-
       <section className="rounded-[28px] bg-[linear-gradient(135deg,#3a7190_0%,#131415_100%)] p-5 text-white">
         <p className="font-[family-name:var(--font-display)] text-xl font-extrabold leading-tight">
           {hotel.fullName}
         </p>
         <p className="mt-2 text-sm text-white/70">{hotel.address}</p>
         <p className="mt-4 text-sm font-bold text-[#7dbfd3]">{hotel.phone}</p>
-        <p className="mt-1 text-sm text-white/80">{hotel.phoneAlt}</p>
         <div className="mt-5 flex items-center gap-3">
           <a
             href={hotel.instagramUrl}

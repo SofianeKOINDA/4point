@@ -20,7 +20,6 @@ export const hotel = {
   fullName: "Four Points by Sheraton Dakar Diamniadio",
   shortName: "Dakar Diamniadio",
   phone: "+221 33 924 86 00",
-  phoneAlt: "+221 78 465 91 40",
   email: "fp.dssfp.info@fourpoints.com",
   address: "Pôle Urbain Diamniadio, Sortie 11 — derrière Dakar Arena",
   instagram: "@fourpointsbysheraton.dakar",
@@ -49,17 +48,37 @@ export const featured = [
       fr: "Chic’Afrique — samedi soir",
       en: "Chic’Afrique — Saturday night",
     },
-    image: "/hotel/lounge.jpg",
+    image: "/hotel/chic-afrique.webp",
+    cta: { fr: "Découvrir", en: "Discover" },
+  },
+  {
+    id: "brunch",
+    title: "Sunday Brunch",
+    subtitle: {
+      fr: "Brunch du dimanche · FP Social",
+      en: "Sunday brunch · FP Social",
+    },
+    image: "/hotel/brunch.webp",
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
     id: "pool",
     title: { fr: "Pool Life", en: "Pool Life" },
     subtitle: {
-      fr: "Piscine extérieure · bien-être",
-      en: "Outdoor pool · wellness",
+      fr: "Piscine extérieure",
+      en: "Outdoor pool",
     },
-    image: "/hotel/pool.jpg",
+    image: "/hotel/pool.webp",
+    cta: { fr: "Y aller", en: "Go" },
+  },
+  {
+    id: "spa",
+    title: "Spa",
+    subtitle: {
+      fr: "Sauna & bien-être",
+      en: "Sauna & wellness",
+    },
+    image: "/hotel/spa.webp",
     cta: { fr: "Y aller", en: "Go" },
   },
 ];
@@ -72,7 +91,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Petit-déj · Déjeuner · Dîner",
       en: "Breakfast · Lunch · Dinner",
     },
-    image: "/hotel/lobby.jpg",
+    image: "/hotel/restaurant.webp",
     tag: { fr: "Restaurant", en: "Restaurant" },
     detail: {
       fr: "Buffet / à la carte · Cuisine locale & internationale",
@@ -86,7 +105,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Cocktails · Drinks · Snacks",
       en: "Cocktails · Drinks · Snacks",
     },
-    image: "/hotel/lounge.jpg",
+    image: "/hotel/bar.webp",
     tag: "Bar",
     detail: {
       fr: "Best Brews, craft beers · Sports",
@@ -100,7 +119,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Afro-contemporain · 12h–00h",
       en: "Afro-contemporary · 12pm–12am",
     },
-    image: "/hotel/lounge.jpg",
+    image: "/hotel/chic-afrique.webp",
     tag: "Lifestyle",
     detail: {
       fr: "Cuisine / cocktails · Ambiance · Afro Chic Night (samedi)",
@@ -129,13 +148,13 @@ export const hotelLife: GuideItem[] = [
   },
   {
     id: "wellness",
-    title: { fr: "Piscine & Bien-être", en: "Pool & Wellness" },
+    title: { fr: "Piscine & Spa", en: "Pool & Spa" },
     subtitle: {
-      fr: "Piscine · sauna · recovery",
-      en: "Pool · sauna · recovery",
+      fr: "Piscine · sauna · bien-être",
+      en: "Pool · sauna · wellness",
     },
-    image: "/hotel/sauna.jpg",
-    tag: "Wellness",
+    image: "/hotel/spa.webp",
+    tag: "Spa",
   },
   {
     id: "meeting",
@@ -144,7 +163,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Salles modulables & équipées",
       en: "Flexible equipped rooms",
     },
-    image: "/hotel/meeting.jpg",
+    image: "/hotel/meeting.webp",
     tag: { fr: "Affaires", en: "Business" },
   },
   {
@@ -154,7 +173,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Salle de sport 24h",
       en: "24h fitness center",
     },
-    image: "/hotel/tg-sport.jpg",
+    image: "/hotel/fitness.webp",
     tag: { fr: "Sport", en: "Sport" },
   },
 ];
@@ -211,7 +230,7 @@ export const activities: GuideItem[] = [
       fr: "10 000 FCFA / 10 min · dès 11 ans",
       en: "10,000 FCFA / 10 min · from age 11",
     },
-    image: "/hotel/activities/karting.jpg",
+    image: "/hotel/karting.webp",
     tag: { fr: "Mar–Dim 9h–19h30", en: "Tue–Sun 9am–7:30pm" },
     detail: {
       fr: "Réservation à la réception",
@@ -235,7 +254,7 @@ export const activities: GuideItem[] = [
       fr: "Salle de sport de l’hôtel",
       en: "Hotel fitness center",
     },
-    image: "/hotel/tg-sport.jpg",
+    image: "/hotel/fitness.webp",
     tag: { fr: "Sur place", en: "On site" },
   },
 ];
@@ -248,7 +267,7 @@ export const discoverDakar: GuideItem[] = [
       fr: "Patrimoine & histoire",
       en: "Heritage & history",
     },
-    image: "/hotel/dakar/goree.jpg",
+    image: "/hotel/dakar/goree.webp",
     tag: { fr: "Incontournable", en: "Must-see" },
   },
   {
@@ -340,7 +359,7 @@ export const discoverSenegal: GuideItem[] = [
       fr: "Excursion signature",
       en: "Signature excursion",
     },
-    image: "/hotel/tg-hero.jpg",
+    image: "/hotel/dakar/lac-rose.webp",
     tag: { fr: "Excursion", en: "Trip" },
   },
   {
@@ -350,7 +369,7 @@ export const discoverSenegal: GuideItem[] = [
       en: "Bandia Reserve",
     },
     subtitle: "Safari",
-    image: "/hotel/ten/ground-foot.jpg",
+    image: "/hotel/dakar/bandia.webp",
     tag: { fr: "Nature", en: "Nature" },
   },
   {
@@ -455,13 +474,74 @@ export const transportDestinations = [
     id: "arena",
     title: "Dakar Arena",
     subtitle: {
-      fr: "Événements & spectacles",
-      en: "Events & shows",
+      fr: "Badminton et finales de futsal",
+      en: "Badminton and futsal finals",
     },
     time: { fr: "~8 min", en: "~8 min" },
     tip: {
       fr: "Juste derrière le Pôle Urbain Diamniadio",
       en: "Right behind Diamniadio Urban Pole",
+    },
+  },
+  {
+    id: "exhibition",
+    title: {
+      fr: "Dakar Exhibition Center",
+      en: "Dakar Exhibition Center",
+    },
+    subtitle: {
+      fr: "Centre des expositions",
+      en: "Exhibition centre",
+    },
+    time: { fr: "~8 min", en: "~8 min" },
+    tip: {
+      fr: "Taxi / navette — demander à la réception",
+      en: "Taxi / shuttle — ask at reception",
+    },
+  },
+  {
+    id: "equestre",
+    title: {
+      fr: "Centre Équestre",
+      en: "Equestrian Centre",
+    },
+    subtitle: {
+      fr: "Centre équestre de la Gendarmerie · saut d’obstacles",
+      en: "Gendarmerie equestrian centre · show jumping",
+    },
+    time: { fr: "~5 min", en: "~5 min" },
+    tip: {
+      fr: "Équitation · taxi / navette",
+      en: "Equestrian · taxi / shuttle",
+    },
+  },
+  {
+    id: "uam",
+    title: {
+      fr: "Université Amadou Mahtar Mbow",
+      en: "Amadou Mahtar Mbow University",
+    },
+    subtitle: {
+      fr: "Village olympique · UAM",
+      en: "Olympic village · UAM",
+    },
+    time: { fr: "~8 min", en: "~8 min" },
+    tip: {
+      fr: "Taxi / navette — demander à la réception",
+      en: "Taxi / shuttle — ask at reception",
+    },
+  },
+  {
+    id: "saly-beach",
+    title: "Saly Beach West",
+    subtitle: {
+      fr: "Sports de plage et disciplines associées",
+      en: "Beach sports and related disciplines",
+    },
+    time: { fr: "~45 min", en: "~45 min" },
+    tip: {
+      fr: "Chauffeur / taxi — à organiser avec la réception",
+      en: "Driver / taxi — arrange with reception",
     },
   },
   {
@@ -603,35 +683,6 @@ export const practical: InfoRow[] = [
       en: "Ask reception for the code",
     },
   },
-];
-
-export const athletes: Localized[] = [
-  {
-    fr: "Early breakfast",
-    en: "Early breakfast",
-  },
-  {
-    fr: "Packed breakfast / meals (si prévu)",
-    en: "Packed breakfast / meals (if planned)",
-  },
-  "Laundry",
-  "Recovery / wellness",
-  {
-    fr: "Ice requests (si disponible)",
-    en: "Ice requests (if available)",
-  },
-  "Fitness",
-  {
-    fr: "Physiotherapy / infos médicales (si prévu)",
-    en: "Physiotherapy / medical info (if planned)",
-  },
-  "Team meeting rooms",
-  "Equipment storage",
-  "Transport departure board",
-  "Competition schedule",
-  "Prayer information",
-  "Dietary requirements",
-  "Delegation contacts / liaison desk",
 ];
 
 export const quickActions = [

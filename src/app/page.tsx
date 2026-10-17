@@ -44,9 +44,6 @@ export default function Home() {
             className="h-14 w-auto object-contain"
             priority
           />
-          <p className="mt-2 text-[15px] font-medium text-[var(--muted)]">
-            {t("brandGreeting")}
-          </p>
         </div>
         <div className="flex shrink-0 flex-col items-end gap-2">
           <LanguageSwitcher />

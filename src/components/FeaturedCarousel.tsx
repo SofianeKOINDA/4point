@@ -64,9 +64,6 @@ export function FeaturedCarousel() {
 
         <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between p-5">
           <div className="max-w-[75%]">
-            <p className="animate-rise text-[11px] font-bold uppercase tracking-[0.2em] text-[#7dbfd3]">
-              {t("tonight")}
-            </p>
             <h3 className="animate-rise-2 mt-1 font-[family-name:var(--font-display)] text-[2.4rem] leading-[0.95] font-extrabold tracking-tight text-white">
               {tx(item.title)}
             </h3>
