@@ -10,9 +10,9 @@ const fr = {
   atHotel: "À l’hôtel",
   complex: "Le complexe · The Ground",
   welcomeKicker: "Bienvenue",
-  welcomeTitle: "Four Points by Sheraton Dakar Diamniadio",
+  welcomeTitle: "Votre adresse lifestyle à Diamniadio",
   welcomeText:
-    "Niché au cœur du Pôle Urbain de Diamniadio, à quelques minutes de l’aéroport international Blaise Diagne et de la Dakar Arena, le Four Points by Sheraton Dakar Diamniadio vous accueille dans un cadre moderne et chaleureux. L’hôtel réunit 173 chambres et suites élégantes, une piscine extérieure, un spa, une salle de fitness, des espaces de réunion modulables et une sélection de restaurants et bars. Que vous voyagiez pour affaires, pour le sport ou pour le plaisir, vivez un séjour alliant confort contemporain et hospitalité sénégalaise — la Teranga.",
+    "Bienvenue au Four Points by Sheraton Dakar Diamniadio, votre adresse incontournable au cœur de la nouvelle destination lifestyle du Sénégal. Entre détente, gastronomie, affaires et loisirs, découvrez un hôtel contemporain de 173 chambres et suites offrant piscine extérieure, salle de sport, espaces de restauration et salles de réunion modernes. À seulement 20 minutes de l’Aéroport International Blaise Diagne (AIBD), profitez d’un séjour où confort, simplicité et art de recevoir se conjuguent pour créer une expérience mémorable.",
   diningTitle: "Restaurants & Bars",
   diningSubtitle: "Horaires & concepts de nos tables et bars.",
   hoursLabel: "Horaires",
@@ -101,9 +101,9 @@ const en: typeof fr = {
   atHotel: "At the hotel",
   complex: "The complex · The Ground",
   welcomeKicker: "Welcome",
-  welcomeTitle: "Four Points by Sheraton Dakar Diamniadio",
+  welcomeTitle: "Your lifestyle address in Diamniadio",
   welcomeText:
-    "Nestled in the heart of the Diamniadio Urban Pole, just minutes from Blaise Diagne International Airport and Dakar Arena, Four Points by Sheraton Dakar Diamniadio welcomes you in a modern, warm setting. The hotel brings together 173 elegant rooms and suites, an outdoor pool, a spa, a fitness centre, flexible meeting spaces and a selection of restaurants and bars. Whether you travel for business, sport or leisure, enjoy a stay that blends contemporary comfort with Senegalese hospitality — Teranga.",
+    "Welcome to Four Points by Sheraton Dakar Diamniadio, your must-visit address at the heart of Senegal’s new lifestyle destination. Between relaxation, dining, business and leisure, discover a contemporary hotel of 173 rooms and suites offering an outdoor pool, a fitness centre, dining venues and modern meeting rooms. Just 20 minutes from Blaise Diagne International Airport (AIBD), enjoy a stay where comfort, simplicity and the art of hospitality come together to create a memorable experience.",
   diningTitle: "Restaurants & Bars",
   diningSubtitle: "Opening hours & concepts of our venues.",
   hoursLabel: "Hours",
