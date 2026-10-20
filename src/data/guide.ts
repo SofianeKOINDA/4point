@@ -32,33 +32,43 @@ export const hotel = {
 
 export const featured = [
   {
-    id: "ten",
-    title: { fr: "Espace TEN", en: "TEN Space" },
+    id: "hotel",
+    title: { fr: "Four Points Dakar", en: "Four Points Dakar" },
     subtitle: {
-      fr: "Trampoline · Escalade · Ninja",
-      en: "Trampoline · Climbing · Ninja",
+      fr: "By Sheraton · Diamniadio",
+      en: "By Sheraton · Diamniadio",
     },
-    image: "/hotel/ten/escalade.jpg",
+    image: "/hotel/fp-facade.jpg",
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
-    id: "afro",
-    title: { fr: "Afro Chic Night", en: "Afro Chic Night" },
+    id: "lobby",
+    title: { fr: "Lobby & lounge", en: "Lobby & lounge" },
     subtitle: {
-      fr: "Chic’Afrique — samedi soir",
-      en: "Chic’Afrique — Saturday night",
+      fr: "Design urbain contemporain",
+      en: "Contemporary urban design",
     },
-    image: "/hotel/chic-afrique.webp",
+    image: "/hotel/fp-lobby.jpg",
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
-    id: "brunch",
-    title: "Sunday Brunch",
+    id: "rooms",
+    title: { fr: "Chambres & Suites", en: "Rooms & Suites" },
     subtitle: {
-      fr: "Brunch du dimanche · FP Social",
-      en: "Sunday brunch · FP Social",
+      fr: "173 chambres modernes",
+      en: "173 modern rooms",
     },
-    image: "/hotel/brunch.webp",
+    image: "/hotel/fp-room.jpg",
+    cta: { fr: "Découvrir", en: "Discover" },
+  },
+  {
+    id: "restaurant",
+    title: "FP Social",
+    subtitle: {
+      fr: "Restaurant · 6h30 – 23h",
+      en: "Restaurant · 6:30am – 11pm",
+    },
+    image: "/hotel/fp-restaurant-1.jpg",
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
@@ -68,17 +78,7 @@ export const featured = [
       fr: "Piscine extérieure",
       en: "Outdoor pool",
     },
-    image: "/hotel/pool.webp",
-    cta: { fr: "Y aller", en: "Go" },
-  },
-  {
-    id: "spa",
-    title: "Spa",
-    subtitle: {
-      fr: "Sauna & bien-être",
-      en: "Sauna & wellness",
-    },
-    image: "/hotel/spa.webp",
+    image: "/hotel/pool.jpg",
     cta: { fr: "Y aller", en: "Go" },
   },
 ];
@@ -91,7 +91,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Petit-déj · Déjeuner · Dîner",
       en: "Breakfast · Lunch · Dinner",
     },
-    image: "/hotel/restaurant.webp",
+    image: "/hotel/restaurant.jpg",
     tag: { fr: "Restaurant", en: "Restaurant" },
     detail: {
       fr: "Buffet / à la carte · Cuisine locale & internationale",
@@ -105,7 +105,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Cocktails · Drinks · Snacks",
       en: "Cocktails · Drinks · Snacks",
     },
-    image: "/hotel/bar.webp",
+    image: "/hotel/bar.jpg",
     tag: "Bar",
     detail: {
       fr: "Best Brews, craft beers · Sports",
@@ -116,10 +116,10 @@ export const hotelLife: GuideItem[] = [
     id: "chicafrique",
     title: "Chic’Afrique",
     subtitle: {
-      fr: "Afro-contemporain · 12h–00h",
-      en: "Afro-contemporary · 12pm–12am",
+      fr: "Afro-contemporain · 12h–23h",
+      en: "Afro-contemporary · 12pm–11pm",
     },
-    image: "/hotel/chic-afrique.webp",
+    image: "/hotel/chic-afrique.jpg",
     tag: "Lifestyle",
     detail: {
       fr: "Cuisine / cocktails · Ambiance · Afro Chic Night (samedi)",
@@ -153,7 +153,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Piscine · sauna · bien-être",
       en: "Pool · sauna · wellness",
     },
-    image: "/hotel/spa.webp",
+    image: "/hotel/spa.jpg",
     tag: "Spa",
   },
   {
@@ -163,7 +163,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Salles modulables & équipées",
       en: "Flexible equipped rooms",
     },
-    image: "/hotel/meeting.webp",
+    image: "/hotel/meeting.jpg",
     tag: { fr: "Affaires", en: "Business" },
   },
   {
@@ -173,10 +173,97 @@ export const hotelLife: GuideItem[] = [
       fr: "Salle de sport 24h",
       en: "24h fitness center",
     },
-    image: "/hotel/fitness.webp",
+    image: "/hotel/fitness.jpg",
     tag: { fr: "Sport", en: "Sport" },
   },
 ];
+
+export type DiningVenue = {
+  id: string;
+  name: string;
+  tag: Localized;
+  hours: string;
+  image: string;
+  /** Sous-titre court affiché sur la carte d'accueil (le texte complet vit sur /restau/[id]) */
+  teaser: Localized;
+  description: Localized;
+  gallery?: string[];
+};
+
+/** Restaurants & bars — horaires et présentations fournis par l'hôtel */
+export const diningVenues: DiningVenue[] = [
+  {
+    id: "fp-social",
+    name: "FP Social",
+    tag: { fr: "Restaurant", en: "Restaurant" },
+    hours: "6h30 – 23h",
+    image: "/hotel/fp-restaurant-1.jpg",
+    gallery: ["/hotel/fp-restaurant-2.jpg"],
+    teaser: {
+      fr: "Petit-déj · Déjeuner · Dîner — buffet ou à la carte",
+      en: "Breakfast · Lunch · Dinner — buffet or à la carte",
+    },
+    description: {
+      fr: "Découvrez le concept « FP Social Restaurant », au design urbain contemporain, pensé pour une expérience culinaire conviviale. Commencez votre journée par un délicieux petit-déjeuner buffet, profitez d’un déjeuner ou d’un dîner — sous forme de buffet ou à la carte — et savourez nos boissons signature, préparées spécialement pour vous.",
+      en: "Discover the “FP Social Restaurant” concept, with its contemporary urban design, created for a convivial dining experience. Start your day with a delicious breakfast buffet, enjoy lunch or dinner — buffet or à la carte — and savour our signature drinks, crafted especially for you.",
+    },
+  },
+  {
+    id: "fp-social-bar",
+    name: "FP Social Bar",
+    tag: "Bar",
+    hours: "6h30 – 23h",
+    image: "/hotel/bar.jpg",
+    teaser: {
+      fr: "Cocktails · Best Brews · Sports",
+      en: "Cocktails · Best Brews · Sports",
+    },
+    description: {
+      fr: "Venez manger un morceau et savourer vos boissons au bar FP Social, à Diamniadio. C’est l’endroit idéal pour se détendre, échanger avec les autres, suivre vos sports favoris et découvrir « Best Brews », notre concept exclusif de boissons.",
+      en: "Come grab a bite and enjoy your drinks at the FP Social Bar in Diamniadio. It’s the perfect spot to relax, connect with others, follow your favourite sports and discover “Best Brews”, our exclusive drinks concept.",
+    },
+  },
+  {
+    id: "chic-afrique",
+    name: "Chic’Afrique",
+    tag: { fr: "Lounge", en: "Lounge" },
+    hours: "12h – 23h",
+    image: "/hotel/chic-afrique.jpg",
+    teaser: {
+      fr: "Lounge afro-contemporain · cocktails & spécialités",
+      en: "Afro-contemporary lounge · cocktails & specialties",
+    },
+    description: {
+      fr: "Inspiré par la richesse de la culture africaine, Chic’Afrique est un lounge chaleureux et vibrant où l’on se retrouve pour se détendre, savourer de délicieux cocktails et déguster des spécialités africaines. Entre bonne musique, ambiance conviviale et soirées dansantes, c’est l’endroit idéal pour partager des moments mémorables.",
+      en: "Inspired by the richness of African culture, Chic’Afrique is a warm and vibrant lounge where you come together to relax, enjoy delicious cocktails and savour African specialties. Between great music, a friendly atmosphere and dance nights, it’s the perfect place to share memorable moments.",
+    },
+  },
+];
+
+export function getDiningVenue(id: string): DiningVenue | undefined {
+  return diningVenues.find((venue) => venue.id === id);
+}
+
+/** Programme de la navette gratuite hôtel ⇄ aéroport (AIBD) */
+export const shuttleSchedule = {
+  note: {
+    fr: "Navette gratuite entre l’hôtel et l’aéroport international Blaise Diagne (AIBD).",
+    en: "Free shuttle between the hotel and Blaise Diagne International Airport (AIBD).",
+  } as Localized,
+  outbound: {
+    label: { fr: "Hôtel → Aéroport", en: "Hotel → Airport" } as Localized,
+    times: ["05h", "10h", "13h", "15h", "18h", "20h", "01h", "03h"],
+  },
+  inbound: {
+    label: { fr: "Aéroport → Hôtel", en: "Airport → Hotel" } as Localized,
+    times: ["06h", "09h", "11h", "14h", "19h", "21h", "02h", "04h"],
+  },
+  perks: [
+    { fr: "Service gratuit", en: "Free service" },
+    { fr: "Confortable", en: "Comfortable" },
+    { fr: "Sûr et fiable", en: "Safe & reliable" },
+  ] as Localized[],
+};
 
 export const tenActivities = [
   {
@@ -230,7 +317,7 @@ export const activities: GuideItem[] = [
       fr: "10 000 FCFA / 10 min · dès 11 ans",
       en: "10,000 FCFA / 10 min · from age 11",
     },
-    image: "/hotel/karting.webp",
+    image: "/hotel/karting.jpg",
     tag: { fr: "Mar–Dim 9h–19h30", en: "Tue–Sun 9am–7:30pm" },
     detail: {
       fr: "Réservation à la réception",
@@ -254,7 +341,7 @@ export const activities: GuideItem[] = [
       fr: "Salle de sport de l’hôtel",
       en: "Hotel fitness center",
     },
-    image: "/hotel/fitness.webp",
+    image: "/hotel/fitness.jpg",
     tag: { fr: "Sur place", en: "On site" },
   },
 ];
@@ -267,7 +354,7 @@ export const discoverDakar: GuideItem[] = [
       fr: "Patrimoine & histoire",
       en: "Heritage & history",
     },
-    image: "/hotel/dakar/goree.webp",
+    image: "/hotel/dakar/goree.jpg",
     tag: { fr: "Incontournable", en: "Must-see" },
   },
   {
@@ -359,7 +446,7 @@ export const discoverSenegal: GuideItem[] = [
       fr: "Excursion signature",
       en: "Signature excursion",
     },
-    image: "/hotel/dakar/lac-rose.webp",
+    image: "/hotel/dakar/lac-rose.jpg",
     tag: { fr: "Excursion", en: "Trip" },
   },
   {
@@ -369,7 +456,7 @@ export const discoverSenegal: GuideItem[] = [
       en: "Bandia Reserve",
     },
     subtitle: "Safari",
-    image: "/hotel/dakar/bandia.webp",
+    image: "/hotel/dakar/bandia.jpg",
     tag: { fr: "Nature", en: "Nature" },
   },
   {

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SectionCarousel } from "@/components/SectionCarousel";
+import { SmartImage } from "@/components/SmartImage";
 import {
   IconCar,
   IconPhone,
@@ -13,6 +14,7 @@ import {
 } from "@/components/Icons";
 import {
   activities,
+  diningVenues,
   discoverDakar,
   emergencies,
   hotel,
@@ -59,6 +61,21 @@ export default function Home() {
 
       <div className="space-y-7">
         <FeaturedCarousel />
+
+        {/* Présentation de l'hôtel (demande client — document initial) */}
+        <section className="px-5">
+          <div className="rounded-[28px] border border-[var(--line)] bg-white/70 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand)]">
+              {t("welcomeKicker")}
+            </p>
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-[1.7rem] font-extrabold leading-tight tracking-tight text-[var(--ink)]">
+              {t("welcomeTitle")}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+              {t("welcomeText")}
+            </p>
+          </div>
+        </section>
 
         <section className="px-5">
           <h2 className="section-title mb-4">{t("quickAccess")}</h2>
@@ -110,7 +127,51 @@ export default function Home() {
         </section>
 
         <SectionCarousel id="hotel" title={t("atHotel")} items={hotelLife} wide />
-        <SectionCarousel id="activites" title={t("complex")} items={activities} />
+
+        {/* Restaurants & Bars — horaires & descriptions (demande client) */}
+        <section className="px-5">
+          <div className="mb-3">
+            <h2 className="section-title">{t("diningTitle")}</h2>
+            <p className="mt-1 text-sm text-[var(--muted)]">{t("diningSubtitle")}</p>
+          </div>
+          <div className="space-y-4">
+            {diningVenues.map((venue) => (
+              <Link
+                key={venue.id}
+                href={`/restau/${venue.id}`}
+                className="block overflow-hidden rounded-[24px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition active:scale-[0.99]"
+              >
+                <div className="relative h-44 w-full">
+                  <SmartImage
+                    src={venue.image}
+                    alt={venue.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 512px) 100vw, 480px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+                  <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-black">
+                    {tx(venue.tag)}
+                  </span>
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-4">
+                    <h3 className="font-[family-name:var(--font-display)] text-2xl font-extrabold leading-none text-white">
+                      {venue.name}
+                    </h3>
+                    <span className="shrink-0 rounded-full bg-[var(--brand)] px-3 py-1 text-xs font-bold text-white">
+                      {venue.hours}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between gap-3 p-4">
+                  <p className="text-sm text-[var(--muted)]">{tx(venue.teaser)}</p>
+                  <span className="shrink-0 text-xs font-bold text-[var(--brand)]">
+                    {t("seeAll")}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <section className="px-5">
           <div className="mb-3 flex items-end justify-between">
@@ -147,6 +208,9 @@ export default function Home() {
           </div>
           <SectionCarousel items={discoverDakar} linkBase="/discover" />
         </div>
+
+        {/* The Ground / Le complexe — déplacé en fin de page (demande client) */}
+        <SectionCarousel id="activites" title={t("complex")} items={activities} />
 
         <section className="px-5 pb-2">
           <Link

@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# photo masters (originaux HD hors déploiement — versions web dans public/hotel)
+/_photo-masters/

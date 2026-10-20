@@ -2,7 +2,12 @@
 
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
-import { hotel, transportDestinations, transportModes } from "@/data/guide";
+import {
+  hotel,
+  shuttleSchedule,
+  transportDestinations,
+  transportModes,
+} from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function TransportPage() {
@@ -10,6 +15,45 @@ export default function TransportPage() {
 
   return (
     <PageShell title={t("transportTitle")} subtitle={t("transportSubtitle")}>
+      {/* Navette gratuite — programme fourni par l'hôtel (demande client) */}
+      <section>
+        <h2 className="section-title mb-1">{t("shuttleTitle")}</h2>
+        <p className="mb-3 text-sm text-[var(--muted)]">
+          {tx(shuttleSchedule.note)}
+        </p>
+        <div className="overflow-hidden rounded-[24px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+          <div className="grid grid-cols-2 divide-x divide-[var(--line)]">
+            {[shuttleSchedule.outbound, shuttleSchedule.inbound].map((dir) => (
+              <div key={tx(dir.label)} className="p-4">
+                <p className="mb-3 text-xs font-bold uppercase tracking-wide text-[var(--teal)]">
+                  {tx(dir.label)}
+                </p>
+                <ul className="space-y-2">
+                  {dir.times.map((time) => (
+                    <li
+                      key={time}
+                      className="text-sm font-semibold tracking-wide text-[var(--ink)]"
+                    >
+                      {time}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2 border-t border-[var(--line)] bg-[var(--teal-soft)] p-4">
+            {shuttleSchedule.perks.map((perk) => (
+              <span
+                key={tx(perk)}
+                className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--teal)]"
+              >
+                {tx(perk)}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section>
         <h2 className="section-title mb-3">{t("destinations")}</h2>
         <div className="space-y-3">
