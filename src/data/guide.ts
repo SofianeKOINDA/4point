@@ -469,14 +469,14 @@ export const discoverSenegal: GuideItem[] = [
       fr: "Plages & détente",
       en: "Beaches & relaxation",
     },
-    image: "/hotel/pool.jpg",
+    image: "/hotel/dakar/saly.jpg",
     tag: { fr: "Côte", en: "Coast" },
   },
   {
     id: "somone",
     title: "Somone",
     subtitle: { fr: "Lagune", en: "Lagoon" },
-    image: "/hotel/tg-spa.jpg",
+    image: "/hotel/dakar/somone.jpg",
     tag: { fr: "Nature", en: "Nature" },
   },
   {
@@ -486,7 +486,7 @@ export const discoverSenegal: GuideItem[] = [
       fr: "Patrimoine & architecture",
       en: "Heritage & architecture",
     },
-    image: "/hotel/tg-outdoor.jpg",
+    image: "/hotel/dakar/saint-louis.jpg",
     tag: { fr: "Culture", en: "Culture" },
   },
   {
@@ -496,7 +496,7 @@ export const discoverSenegal: GuideItem[] = [
       fr: "Nature & bolongs",
       en: "Nature & bolongs",
     },
-    image: "/hotel/tg-facility.jpg",
+    image: "/hotel/dakar/saloum.jpg",
     tag: { fr: "Nature", en: "Nature" },
   },
   {
@@ -506,7 +506,7 @@ export const discoverSenegal: GuideItem[] = [
       fr: "Le poumon vert",
       en: "The green lung",
     },
-    image: "/hotel/tg-particuliers.jpg",
+    image: "/hotel/dakar/casamance.jpg",
     tag: { fr: "Sud", en: "South" },
   },
 ];
