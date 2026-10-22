@@ -19,6 +19,7 @@ import {
   emergencies,
   hotel,
   hotelLife,
+  meetingRooms,
   quickActions,
   transportDestinations,
 } from "@/data/guide";
@@ -117,7 +118,7 @@ export default function Home() {
                 href={row.href}
                 className="rounded-2xl bg-[#fff1f0] px-3 py-3 text-center"
               >
-                <p className="text-lg font-extrabold text-[var(--brand)]">{tx(row.value)}</p>
+                <p className="text-lg font-extrabold text-[var(--brand)]">📞 {tx(row.value)}</p>
                 <p className="mt-0.5 text-[11px] font-semibold text-[var(--muted)]">
                   {tx(row.label)}
                 </p>
@@ -169,6 +170,34 @@ export default function Home() {
                   </span>
                 </div>
               </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Salles de réunion — noms & photos fournis par l'hôtel */}
+        <section className="px-5">
+          <div className="mb-3">
+            <h2 className="section-title">{t("meetingTitle")}</h2>
+            <p className="mt-1 text-sm text-[var(--muted)]">{t("meetingSubtitle")}</p>
+          </div>
+          <div className="space-y-4">
+            {meetingRooms.map((room) => (
+              <div
+                key={room.id}
+                className="relative h-44 overflow-hidden rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
+              >
+                <SmartImage
+                  src={room.image}
+                  alt={room.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 512px) 100vw, 480px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <h3 className="absolute inset-x-0 bottom-0 p-4 font-[family-name:var(--font-display)] text-xl font-extrabold leading-tight text-white">
+                  {room.name}
+                </h3>
+              </div>
             ))}
           </div>
         </section>

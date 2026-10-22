@@ -21,6 +21,10 @@ export const hotel = {
   shortName: "Dakar Diamniadio",
   phone: "+221 33 924 86 00",
   email: "fp.dssfp.info@fourpoints.com",
+  reservationsEmail: "reservations.dakardiamniadio@fourpoints.com",
+  diningUrl:
+    "https://www.marriott.com/en-us/hotels/dssfp-four-points-dakar-diamniadio/dining/",
+  bonvoyUrl: "https://www.joinmarriottbonvoy.com/emeaqr/s/fr/ch/dssfp",
   address: "Pôle Urbain Diamniadio, Sortie 11 — derrière Dakar Arena",
   instagram: "@fourpointsbysheraton.dakar",
   instagramUrl: "https://www.instagram.com/fourpointsbysheraton.dakar/",
@@ -39,6 +43,16 @@ export const featured = [
       en: "By Sheraton · Diamniadio",
     },
     image: "/hotel/fp-facade.jpg",
+    cta: { fr: "Découvrir", en: "Discover" },
+  },
+  {
+    id: "chicafrique",
+    title: "Chic’Afrique",
+    subtitle: {
+      fr: "Barbecue · Happy Hour · DJ tous les soirs",
+      en: "Barbecue · Happy Hour · DJ every night",
+    },
+    image: "/hotel/chic/chic-3.jpg",
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
@@ -116,14 +130,14 @@ export const hotelLife: GuideItem[] = [
     id: "chicafrique",
     title: "Chic’Afrique",
     subtitle: {
-      fr: "Afro-contemporain · 12h–23h",
-      en: "Afro-contemporary · 12pm–11pm",
+      fr: "Afro-contemporain · 12h–2h",
+      en: "Afro-contemporary · 12pm–2am",
     },
-    image: "/hotel/chic-afrique.jpg",
+    image: "/hotel/chic/chic-3.jpg",
     tag: "Lifestyle",
     detail: {
-      fr: "Cuisine / cocktails · Ambiance · Afro Chic Night (samedi)",
-      en: "Food / cocktails · Atmosphere · Afro Chic Night (Saturday)",
+      fr: "Barbecue · Happy Hour · DJ tous les soirs",
+      en: "Barbecue · Happy Hour · DJ every night",
     },
   },
   {
@@ -160,10 +174,10 @@ export const hotelLife: GuideItem[] = [
     id: "meeting",
     title: { fr: "Réunions", en: "Meetings" },
     subtitle: {
-      fr: "Salles modulables & équipées",
-      en: "Flexible equipped rooms",
+      fr: "El Hadj Omar Tall · Nelson Mandela",
+      en: "El Hadj Omar Tall · Nelson Mandela",
     },
-    image: "/hotel/meeting.jpg",
+    image: "/hotel/meeting/omar-tall.jpg",
     tag: { fr: "Affaires", en: "Business" },
   },
   {
@@ -188,10 +202,40 @@ export type DiningVenue = {
   teaser: Localized;
   description: Localized;
   gallery?: string[];
+  /** Horaires détaillés (ex. buffet déjeuner / dîner) */
+  schedule?: { label: Localized; hours: string }[];
+  /** Temps forts mis en avant (ex. Barbecue, Happy Hour, DJ) */
+  highlights?: Localized[];
 };
 
 /** Restaurants & bars — horaires et présentations fournis par l'hôtel */
 export const diningVenues: DiningVenue[] = [
+  {
+    id: "chic-afrique",
+    name: "Chic’Afrique",
+    tag: { fr: "Lounge", en: "Lounge" },
+    hours: "12h – 2h",
+    image: "/hotel/chic/chic-3.jpg",
+    gallery: [
+      "/hotel/chic/chic-1.jpg",
+      "/hotel/chic/chic-2.jpg",
+      "/hotel/chic/chic-4.jpg",
+      "/hotel/chic/chic-5.jpg",
+    ],
+    teaser: {
+      fr: "Barbecue · Happy Hour · DJ tous les soirs",
+      en: "Barbecue · Happy Hour · DJ every night",
+    },
+    highlights: [
+      { fr: "Barbecue", en: "Barbecue" },
+      { fr: "Happy Hour", en: "Happy Hour" },
+      { fr: "DJ tous les soirs", en: "DJ every night" },
+    ],
+    description: {
+      fr: "Inspiré par la richesse de la culture africaine, Chic’Afrique est un lounge chaleureux et vibrant où l’on se retrouve pour se détendre, savourer de délicieux cocktails et déguster des spécialités africaines. Entre bonne musique, ambiance conviviale et soirées dansantes, c’est l’endroit idéal pour partager des moments mémorables.",
+      en: "Inspired by the richness of African culture, Chic’Afrique is a warm and vibrant lounge where you come together to relax, enjoy delicious cocktails and savour African specialties. Between great music, a friendly atmosphere and dance nights, it’s the perfect place to share memorable moments.",
+    },
+  },
   {
     id: "fp-social",
     name: "FP Social",
@@ -199,6 +243,10 @@ export const diningVenues: DiningVenue[] = [
     hours: "6h30 – 23h",
     image: "/hotel/fp-restaurant-1.jpg",
     gallery: ["/hotel/fp-restaurant-2.jpg"],
+    schedule: [
+      { label: { fr: "Buffet déjeuner", en: "Lunch buffet" }, hours: "12h30 – 15h30" },
+      { label: { fr: "Buffet dîner", en: "Dinner buffet" }, hours: "19h – 22h30" },
+    ],
     teaser: {
       fr: "Petit-déj · Déjeuner · Dîner — buffet ou à la carte",
       en: "Breakfast · Lunch · Dinner — buffet or à la carte",
@@ -223,26 +271,35 @@ export const diningVenues: DiningVenue[] = [
       en: "Come grab a bite and enjoy your drinks at the FP Social Bar in Diamniadio. It’s the perfect spot to relax, connect with others, follow your favourite sports and discover “Best Brews”, our exclusive drinks concept.",
     },
   },
-  {
-    id: "chic-afrique",
-    name: "Chic’Afrique",
-    tag: { fr: "Lounge", en: "Lounge" },
-    hours: "12h – 23h",
-    image: "/hotel/chic-afrique.jpg",
-    teaser: {
-      fr: "Lounge afro-contemporain · cocktails & spécialités",
-      en: "Afro-contemporary lounge · cocktails & specialties",
-    },
-    description: {
-      fr: "Inspiré par la richesse de la culture africaine, Chic’Afrique est un lounge chaleureux et vibrant où l’on se retrouve pour se détendre, savourer de délicieux cocktails et déguster des spécialités africaines. Entre bonne musique, ambiance conviviale et soirées dansantes, c’est l’endroit idéal pour partager des moments mémorables.",
-      en: "Inspired by the richness of African culture, Chic’Afrique is a warm and vibrant lounge where you come together to relax, enjoy delicious cocktails and savour African specialties. Between great music, a friendly atmosphere and dance nights, it’s the perfect place to share memorable moments.",
-    },
-  },
 ];
 
 export function getDiningVenue(id: string): DiningVenue | undefined {
   return diningVenues.find((venue) => venue.id === id);
 }
+
+/** Navette JOJ Dakar 2026 — tous les sites olympiques (demande client) */
+export const jojShuttle = {
+  title: { fr: "Navette JOJ", en: "YOG Shuttle" } as Localized,
+  note: {
+    fr: "Navette vers tous les sites olympiques, toutes les heures.",
+    en: "Shuttle to all Olympic venues, every hour.",
+  } as Localized,
+  hours: { fr: "6h – 22h", en: "6am – 10pm" } as Localized,
+  price: { fr: "2 500 XOF / trajet", en: "2,500 XOF / trip" } as Localized,
+};
+
+/** Salles de réunion (noms et photos fournis par l'hôtel) */
+export const meetingRooms = [
+  { id: "omar-tall", name: "El Hadj Omar Tall Meeting Room", image: "/hotel/meeting/omar-tall.jpg" },
+  { id: "nelson-mandela", name: "Nelson Mandela Meeting Room", image: "/hotel/meeting/nelson-mandela.jpg" },
+];
+
+/** Conseils santé (demande client) */
+export const healthTips: Localized[] = [
+  { fr: "Hydratez-vous", en: "Stay hydrated" },
+  { fr: "Protégez-vous du soleil", en: "Stay sun protected" },
+  { fr: "Attention à l’humidité et à la chaleur", en: "Beware of humidity and heat" },
+];
 
 /** Programme de la navette gratuite hôtel ⇄ aéroport (AIBD) */
 export const shuttleSchedule = {
@@ -667,8 +724,8 @@ export const transportModes = [
     title: { fr: "Navette hôtel", en: "Hotel shuttle" },
     subtitle: "Hotel Shuttle",
     detail: {
-      fr: "Navette hôtel si disponible — réservation à la réception selon les horaires du jour.",
-      en: "Hotel shuttle if available — book at reception according to daily schedules.",
+      fr: "Navette JOJ vers tous les sites olympiques toutes les heures, de 6h à 22h — 2 500 XOF par trajet. Navette aéroport gratuite.",
+      en: "YOG shuttle to all Olympic venues every hour, 6am to 10pm — 2,500 XOF per trip. Free airport shuttle.",
     },
   },
   {
@@ -727,8 +784,8 @@ export const practical: InfoRow[] = [
   {
     label: { fr: "Bureau de change", en: "Currency exchange" },
     value: {
-      fr: "Demander à la réception",
-      en: "Ask at reception",
+      fr: "Au lobby de l’hôtel",
+      en: "In the hotel lobby",
     },
   },
   {

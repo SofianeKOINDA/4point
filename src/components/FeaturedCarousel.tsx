@@ -19,7 +19,12 @@ export function FeaturedCarousel() {
   }, []);
 
   const item = featured[index];
-  const href = item.id === "ten" ? "/ten" : item.id === "pool" ? "/#hotel" : "/#hotel";
+  const href =
+    item.id === "ten"
+      ? "/ten"
+      : item.id === "chicafrique"
+        ? "/restau/chic-afrique"
+        : "/#hotel";
 
   return (
     <section className="px-5 pt-2">

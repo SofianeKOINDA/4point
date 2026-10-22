@@ -57,6 +57,37 @@ export default function DiningDetailPage() {
         </span>
       </div>
 
+      {venue.schedule?.length ? (
+        <div className="space-y-2">
+          {venue.schedule.map((slot) => (
+            <div
+              key={slot.hours}
+              className="flex items-center justify-between rounded-[22px] bg-[var(--teal-soft)] px-4 py-3"
+            >
+              <span className="text-sm font-medium text-[var(--muted)]">
+                {tx(slot.label)}
+              </span>
+              <span className="text-sm font-extrabold text-[var(--ink)]">
+                {slot.hours}
+              </span>
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {venue.highlights?.length ? (
+        <div className="flex flex-wrap gap-2">
+          {venue.highlights.map((item) => (
+            <span
+              key={tx(item)}
+              className="rounded-full bg-[var(--brand)] px-4 py-2 text-sm font-bold text-white"
+            >
+              {tx(item)}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
       <p className="text-[15px] leading-relaxed text-[var(--ink)]">
         {tx(venue.description)}
       </p>
@@ -84,18 +115,45 @@ export default function DiningDetailPage() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
           {lang === "fr" ? "Réservation" : "Booking"}
         </p>
-        <p className="mt-2 text-sm text-white/90">
-          {lang === "fr"
-            ? "Réservez ou renseignez-vous auprès de la réception."
-            : "Book or ask reception for more information."}
-        </p>
+        <p className="mt-2 text-sm text-white/90">{t("bookingText")}</p>
         <a
-          href={`tel:${hotel.phone.replace(/\s/g, "")}`}
-          className="mt-4 inline-flex rounded-full bg-[var(--brand)] px-4 py-2.5 text-sm font-bold text-white"
+          href={`mailto:${hotel.reservationsEmail}`}
+          className="mt-3 block break-all text-sm font-bold text-white underline underline-offset-2"
         >
-          {t("call")}
+          {hotel.reservationsEmail}
         </a>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <a
+            href={`tel:${hotel.phone.replace(/\s/g, "")}`}
+            className="rounded-full bg-[var(--brand)] px-4 py-2.5 text-sm font-bold text-white"
+          >
+            📞 {t("call")}
+          </a>
+          <a
+            href={hotel.diningUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-white/15 px-4 py-2.5 text-sm font-bold text-white"
+          >
+            {t("website")}
+          </a>
+        </div>
       </section>
+
+      <a
+        href={hotel.bonvoyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block rounded-[28px] border border-[var(--line)] bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
+      >
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand)]">
+          Marriott Bonvoy · −10 %
+        </p>
+        <p className="mt-2 text-sm text-[var(--ink)]">{t("bonvoyOffer")}</p>
+        <span className="mt-3 inline-block text-sm font-bold text-[var(--brand)]">
+          {t("bonvoyCta")} →
+        </span>
+      </a>
     </PageShell>
   );
 }

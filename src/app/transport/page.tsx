@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
 import {
   hotel,
+  jojShuttle,
   shuttleSchedule,
   transportDestinations,
   transportModes,
@@ -15,6 +16,25 @@ export default function TransportPage() {
 
   return (
     <PageShell title={t("transportTitle")} subtitle={t("transportSubtitle")}>
+      {/* Navette JOJ — sites olympiques (demande client) */}
+      <section className="rounded-[28px] bg-[var(--brand)] p-5 text-white">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+          Dakar 2026
+        </p>
+        <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl font-extrabold">
+          {tx(jojShuttle.title)}
+        </h2>
+        <p className="mt-2 text-sm text-white/90">{tx(jojShuttle.note)}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-[var(--brand)]">
+            {tx(jojShuttle.hours)}
+          </span>
+          <span className="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-[var(--brand)]">
+            {tx(jojShuttle.price)}
+          </span>
+        </div>
+      </section>
+
       {/* Navette gratuite — programme fourni par l'hôtel (demande client) */}
       <section>
         <h2 className="section-title mb-1">{t("shuttleTitle")}</h2>

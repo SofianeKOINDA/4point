@@ -65,13 +65,13 @@ export const places: Place[] = [
   {
     id: "chicafrique",
     name: "Chic’Afrique",
-    subtitle: "Afro-contemporain · 12h–23h",
+    subtitle: "Afro-contemporain · 12h–2h",
     category: "hotel",
     lat: 14.73765,
     lng: -17.2182,
-    image: "/hotel/chic-afrique.jpg",
+    image: "/hotel/chic/chic-3.jpg",
     distance: "Dans l’hôtel",
-    tip: "Afro Chic Night — samedi",
+    tip: "Barbecue · Happy Hour · DJ tous les soirs",
   },
   {
     id: "wellness",
@@ -86,11 +86,11 @@ export const places: Place[] = [
   {
     id: "meeting",
     name: "Salles de réunion",
-    subtitle: "Business & événements",
+    subtitle: "El Hadj Omar Tall · Nelson Mandela",
     category: "hotel",
     lat: 14.73805,
     lng: -17.21835,
-    image: "/hotel/meeting.jpg",
+    image: "/hotel/meeting/omar-tall.jpg",
     distance: "Dans l’hôtel",
   },
   {

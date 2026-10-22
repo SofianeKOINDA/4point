@@ -2,7 +2,7 @@
 
 import { IconFacebook, IconInstagram, IconLinkedin } from "@/components/Icons";
 import { PageShell } from "@/components/PageShell";
-import { emergencies, hotel, practical } from "@/data/guide";
+import { emergencies, healthTips, hotel, practical } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function InfosPage() {
@@ -22,7 +22,7 @@ export default function InfosPage() {
               <span className="text-sm font-medium text-[var(--muted)]">
                 {tx(row.label)}
               </span>
-              <span className="text-sm font-bold text-[var(--brand)]">{tx(row.value)}</span>
+              <span className="text-sm font-bold text-[var(--brand)]">📞 {tx(row.value)}</span>
             </a>
           ))}
         </div>
@@ -47,12 +47,27 @@ export default function InfosPage() {
         </div>
       </section>
 
+      <section>
+        <h2 className="section-title mb-3">{t("healthTitle")}</h2>
+        <div className="space-y-2">
+          {healthTips.map((tip, i) => (
+            <div
+              key={tx(tip)}
+              className="flex items-center gap-3 rounded-2xl bg-[var(--teal-soft)] px-4 py-3.5"
+            >
+              <span aria-hidden>{["💧", "☀️", "🌡️"][i]}</span>
+              <span className="text-sm font-bold text-[var(--ink)]">{tx(tip)}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="rounded-[28px] bg-[linear-gradient(135deg,#3a7190_0%,#131415_100%)] p-5 text-white">
         <p className="font-[family-name:var(--font-display)] text-xl font-extrabold leading-tight">
           {hotel.fullName}
         </p>
         <p className="mt-2 text-sm text-white/70">{hotel.address}</p>
-        <p className="mt-4 text-sm font-bold text-[#7dbfd3]">{hotel.phone}</p>
+        <p className="mt-4 text-sm font-bold text-[#7dbfd3]">📞 {hotel.phone}</p>
         <div className="mt-5 flex items-center gap-3">
           <a
             href={hotel.instagramUrl}
