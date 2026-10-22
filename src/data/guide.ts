@@ -23,6 +23,8 @@ export const hotel = {
   shortName: "Dakar Diamniadio",
   phone: "+221 33 924 86 00",
   email: "fp.dssfp.info@fourpoints.com",
+  websiteUrl:
+    "https://www.marriott.com/en-us/hotels/dssfp-four-points-dakar-diamniadio/overview/",
   reservationsEmail: "reservations.dakardiamniadio@fourpoints.com",
   diningUrl:
     "https://www.marriott.com/en-us/hotels/dssfp-four-points-dakar-diamniadio/dining/",

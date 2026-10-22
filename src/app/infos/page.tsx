@@ -1,6 +1,13 @@
 "use client";
 
-import { IconFacebook, IconInstagram, IconLinkedin, IconPhone } from "@/components/Icons";
+import {
+  IconFacebook,
+  IconGlobe,
+  IconInstagram,
+  IconLinkedin,
+  IconMail,
+  IconPhone,
+} from "@/components/Icons";
 import { PageShell } from "@/components/PageShell";
 import { emergencies, healthTips, hotel, practical } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
@@ -98,6 +105,22 @@ export default function InfosPage() {
             className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition active:scale-95"
           >
             <IconLinkedin />
+          </a>
+          <a
+            href={hotel.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t("website")}
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition active:scale-95"
+          >
+            <IconGlobe />
+          </a>
+          <a
+            href={`mailto:${hotel.reservationsEmail}`}
+            aria-label={t("email")}
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition active:scale-95"
+          >
+            <IconMail />
           </a>
         </div>
         <p className="mt-3 text-sm font-semibold text-white/90">{t("shareStay")}</p>
