@@ -69,7 +69,7 @@ export const places: Place[] = [
     category: "hotel",
     lat: 14.73765,
     lng: -17.2182,
-    image: "/hotel/chic/chic-3.jpg",
+    image: "/hotel/chic-afrique.jpg",
     distance: "Dans l’hôtel",
     tip: "Barbecue · Happy Hour · DJ tous les soirs",
   },

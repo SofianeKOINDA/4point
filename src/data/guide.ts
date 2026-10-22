@@ -54,7 +54,7 @@ export const featured = [
       fr: "Barbecue · Happy Hour · DJ tous les soirs",
       en: "Barbecue · Happy Hour · DJ every night",
     },
-    image: "/hotel/chic/chic-3.jpg",
+    image: "/hotel/chic-afrique.jpg",
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
@@ -135,7 +135,7 @@ export const hotelLife: GuideItem[] = [
       fr: "Afro-contemporain · 12h–2h",
       en: "Afro-contemporary · 12pm–2am",
     },
-    image: "/hotel/chic/chic-3.jpg",
+    image: "/hotel/chic-afrique.jpg",
     tag: "Lifestyle",
     detail: {
       fr: "Barbecue · Happy Hour · DJ tous les soirs",
@@ -217,7 +217,7 @@ export const diningVenues: DiningVenue[] = [
     name: "Chic’Afrique",
     tag: { fr: "Lounge", en: "Lounge" },
     hours: "12h – 2h",
-    image: "/hotel/chic/chic-3.jpg",
+    image: "/hotel/chic-afrique.jpg",
     gallery: [
       "/hotel/chic/chic-1.jpg",
       "/hotel/chic/chic-2.jpg",
