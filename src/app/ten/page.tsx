@@ -13,8 +13,8 @@ export default function TenPage() {
       title={lang === "fr" ? "Espace TEN" : "TEN Space"}
       subtitle={
         lang === "fr"
-          ? "Trampoline · Escalade · Ninja — 15 000 FCFA · Mar–Dim 10h–20h"
-          : "Trampoline · Climbing · Ninja — 15,000 FCFA · Tue–Sun 10am–8pm"
+          ? "Trampoline · Escalade · Ninja — 15 000 XOF · Mar–Dim 10h–20h"
+          : "Trampoline · Climbing · Ninja — 15,000 XOF · Tue–Sun 10am–8pm"
       }
     >
       <div className="relative h-52 overflow-hidden rounded-[28px]">
@@ -60,14 +60,14 @@ export default function TenPage() {
         ))}
       </section>
 
-      <section className="rounded-[28px] bg-[var(--teal)] p-5 text-white">
+      <section className="rounded-[28px] bg-brand-gradient p-5 text-white">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
           {lang === "fr" ? "Réservation" : "Booking"}
         </p>
         <p className="mt-2 text-sm text-white/90">
           {lang === "fr"
-            ? "Tarif 15 000 FCFA · Ouvert du mardi au dimanche, 10h–20h. Réservez à la réception."
-            : "Rate 15,000 FCFA · Open Tuesday to Sunday, 10am–8pm. Book at reception."}
+            ? "Tarif 15 000 XOF · Ouvert du mardi au dimanche, 10h–20h. Réservez à la réception."
+            : "Rate 15,000 XOF · Open Tuesday to Sunday, 10am–8pm. Book at reception."}
         </p>
         <a
           href={`tel:${hotel.phone.replace(/\s/g, "")}`}

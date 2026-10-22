@@ -11,9 +11,9 @@ export function IconWifi() {
   );
 }
 
-export function IconPhone() {
+export function IconPhone({ className }: { className?: string }) {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden className={className}>
       <path
         d="M7 3h3l1.5 4-2 1.5a12 12 0 0 0 5 5L16 12l4 1.5V17a2 2 0 0 1-2 2A14 14 0 0 1 5 5a2 2 0 0 1 2-2Z"
         stroke="currentColor"

@@ -119,7 +119,7 @@ export default function TransportPage() {
         </div>
       </section>
 
-      <section className="rounded-[28px] bg-[var(--teal)] p-5 text-white">
+      <section className="rounded-[28px] bg-brand-gradient p-5 text-white">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
           {t("needRide")}
         </p>

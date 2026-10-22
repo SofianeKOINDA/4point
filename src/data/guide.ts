@@ -13,6 +13,8 @@ export type InfoRow = {
   label: Localized;
   value: Localized;
   href?: string;
+  /** Vrai numéro d'urgence (Police, SAMU, Pompiers) — affiché avec l'icône téléphone */
+  urgent?: boolean;
 };
 
 export const hotel = {
@@ -144,8 +146,8 @@ export const hotelLife: GuideItem[] = [
     id: "roomservice",
     title: "Room Service",
     subtitle: {
-      fr: "Menu & petit-déj en chambre",
-      en: "In-room menu & breakfast",
+      fr: "Menu & petit-déj en chambre · 24h/24",
+      en: "In-room menu & breakfast · 24/7",
     },
     image: "/hotel/room.jpg",
     tag: { fr: "Conciergerie", en: "Concierge" },
@@ -281,8 +283,8 @@ export function getDiningVenue(id: string): DiningVenue | undefined {
 export const jojShuttle = {
   title: { fr: "Navette JOJ", en: "YOG Shuttle" } as Localized,
   note: {
-    fr: "Navette vers tous les sites olympiques, toutes les heures.",
-    en: "Shuttle to all Olympic venues, every hour.",
+    fr: "Navette payante vers tous les sites olympiques, toutes les heures à partir de 6h.",
+    en: "Paid shuttle to all Olympic venues, every hour from 6am.",
   } as Localized,
   hours: { fr: "6h – 22h", en: "6am – 10pm" } as Localized,
   price: { fr: "2 500 XOF / trajet", en: "2,500 XOF / trip" } as Localized,
@@ -361,7 +363,7 @@ export const activities: GuideItem[] = [
       en: "Trampoline · Climbing · Ninja",
     },
     image: "/hotel/ten/escalade.jpg",
-    tag: { fr: "15 000 FCFA", en: "15,000 FCFA" },
+    tag: { fr: "15 000 XOF", en: "15,000 XOF" },
     detail: {
       fr: "Mar–Dim 10h–20h · Réservation à la réception",
       en: "Tue–Sun 10am–8pm · Book at reception",
@@ -371,8 +373,8 @@ export const activities: GuideItem[] = [
     id: "karting",
     title: "Karting",
     subtitle: {
-      fr: "10 000 FCFA / 10 min · dès 11 ans",
-      en: "10,000 FCFA / 10 min · from age 11",
+      fr: "10 000 XOF / 10 min · dès 11 ans",
+      en: "10,000 XOF / 10 min · from age 11",
     },
     image: "/hotel/karting.jpg",
     tag: { fr: "Mar–Dim 9h–19h30", en: "Tue–Sun 9am–7:30pm" },
@@ -724,8 +726,8 @@ export const transportModes = [
     title: { fr: "Navette hôtel", en: "Hotel shuttle" },
     subtitle: "Hotel Shuttle",
     detail: {
-      fr: "Navette JOJ vers tous les sites olympiques toutes les heures, de 6h à 22h — 2 500 XOF par trajet. Navette aéroport gratuite.",
-      en: "YOG shuttle to all Olympic venues every hour, 6am to 10pm — 2,500 XOF per trip. Free airport shuttle.",
+      fr: "Navette JOJ payante vers tous les sites olympiques toutes les heures, de 6h à 22h — 2 500 XOF par trajet. Navette aéroport gratuite.",
+      en: "Paid YOG shuttle to all Olympic venues every hour, 6am to 10pm — 2,500 XOF per trip. Free airport shuttle.",
     },
   },
   {
@@ -743,16 +745,18 @@ export const transportModes = [
 ];
 
 export const emergencies: InfoRow[] = [
-  { label: { fr: "Police", en: "Police" }, value: "17", href: "tel:17" },
+  { label: { fr: "Police", en: "Police" }, value: "17", href: "tel:17", urgent: true },
   {
     label: { fr: "Ambulance / SAMU", en: "Ambulance / SAMU" },
     value: "15",
     href: "tel:15",
+    urgent: true,
   },
   {
     label: { fr: "Pompiers", en: "Fire department" },
     value: "18",
     href: "tel:18",
+    urgent: true,
   },
   {
     label: { fr: "Réception hôtel", en: "Hotel reception" },
@@ -772,7 +776,7 @@ export const emergencies: InfoRow[] = [
 ];
 
 export const practical: InfoRow[] = [
-  { label: { fr: "Devise", en: "Currency" }, value: "FCFA" },
+  { label: { fr: "Devise", en: "Currency" }, value: "XOF" },
   { label: { fr: "Fuseau", en: "Time zone" }, value: "GMT" },
   {
     label: { fr: "ATM / Banque", en: "ATM / Bank" },

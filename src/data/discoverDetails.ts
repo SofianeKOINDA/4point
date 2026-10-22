@@ -79,8 +79,8 @@ export const discoverDakarDetails: DiscoverDetail[] = [
     ],
     tips: [
       {
-        fr: "Prévoyez de l’eau, un chapeau et des espèces (FCFA).",
-        en: "Bring water, a hat and cash (FCFA).",
+        fr: "Prévoyez de l’eau, un chapeau et des espèces (XOF).",
+        en: "Bring water, a hat and cash (XOF).",
       },
       {
         fr: "Respectez les lieux mémoriels — photos parfois limitées à l’intérieur.",

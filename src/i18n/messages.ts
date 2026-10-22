@@ -8,7 +8,7 @@ const fr = {
   emergencies: "Urgences",
   seeAll: "Voir tout →",
   atHotel: "À l’hôtel",
-  complex: "Le complexe · The Ground",
+  complex: "The Ground & Around",
   welcomeKicker: "Bienvenue",
   welcomeTitle: "Votre adresse lifestyle à Diamniadio",
   welcomeText:
@@ -108,7 +108,7 @@ const en: typeof fr = {
   emergencies: "Emergencies",
   seeAll: "See all →",
   atHotel: "At the hotel",
-  complex: "The complex · The Ground",
+  complex: "The Ground & Around",
   welcomeKicker: "Welcome",
   welcomeTitle: "Your lifestyle address in Diamniadio",
   welcomeText:

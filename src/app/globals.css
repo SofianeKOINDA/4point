@@ -119,6 +119,11 @@ body {
       animation: none;
     }
   }
+
+  /* Dégradé de marque — grands blocs sombres (réservation, trajet, sorties…) */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #3a7190 0%, #131415 100%);
+  }
 }
 
 .carousel {

@@ -111,7 +111,7 @@ export default function DiningDetailPage() {
         </div>
       ) : null}
 
-      <section className="rounded-[28px] bg-[var(--teal)] p-5 text-white">
+      <section className="rounded-[28px] bg-brand-gradient p-5 text-white">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
           {lang === "fr" ? "Réservation" : "Booking"}
         </p>
@@ -127,7 +127,7 @@ export default function DiningDetailPage() {
             href={`tel:${hotel.phone.replace(/\s/g, "")}`}
             className="rounded-full bg-[var(--brand)] px-4 py-2.5 text-sm font-bold text-white"
           >
-            📞 {t("call")}
+            {t("call")}
           </a>
           <a
             href={hotel.diningUrl}

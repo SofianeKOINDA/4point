@@ -103,7 +103,7 @@ export const places: Place[] = [
     image: "/hotel/ten/escalade.jpg",
     distance: "~3 min à pied",
     hours: "Mar–Dim 10h–20h",
-    tip: "15 000 FCFA · Trampoline, escalade & ninja",
+    tip: "15 000 XOF · Trampoline, escalade & ninja",
   },
   {
     id: "karting",
@@ -115,7 +115,7 @@ export const places: Place[] = [
     image: "/hotel/karting.jpg",
     distance: "~5 min à pied",
     hours: "Mar–Dim 9h–19h30",
-    tip: "10 000 FCFA / 10 min · dès 11 ans",
+    tip: "10 000 XOF / 10 min · dès 11 ans",
   },
   {
     id: "fitness",
@@ -144,7 +144,7 @@ export const places: Place[] = [
     category: "transport",
     lat: 14.7318,
     lng: -17.2055,
-    image: "/hotel/tg-complex.jpg",
+    image: "/hotel/fp-exterior.jpg",
     distance: "~8 min",
   },
   {
@@ -154,7 +154,7 @@ export const places: Place[] = [
     category: "transport",
     lat: 14.7465,
     lng: -17.1988,
-    image: "/hotel/tg-hero.jpg",
+    image: "/hotel/ten/ground-foot.jpg",
     distance: "~10 min",
   },
   {
@@ -164,7 +164,7 @@ export const places: Place[] = [
     category: "transport",
     lat: 14.6703,
     lng: -17.0731,
-    image: "/hotel/tg-complex.jpg",
+    image: "/hotel/navette.jpg",
     distance: "~20 min",
     tip: "Navette / taxi à la réception",
   },
@@ -175,7 +175,7 @@ export const places: Place[] = [
     category: "transport",
     lat: 14.6708,
     lng: -17.4381,
-    image: "/hotel/tg-outdoor.jpg",
+    image: "/hotel/dakar/plateau.jpg",
     distance: "~30 min",
     tip: "TER · taxi · chauffeur",
   },

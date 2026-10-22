@@ -1,6 +1,6 @@
 "use client";
 
-import { IconFacebook, IconInstagram, IconLinkedin } from "@/components/Icons";
+import { IconFacebook, IconInstagram, IconLinkedin, IconPhone } from "@/components/Icons";
 import { PageShell } from "@/components/PageShell";
 import { emergencies, healthTips, hotel, practical } from "@/data/guide";
 import { useI18n } from "@/i18n/LanguageProvider";
@@ -22,7 +22,10 @@ export default function InfosPage() {
               <span className="text-sm font-medium text-[var(--muted)]">
                 {tx(row.label)}
               </span>
-              <span className="text-sm font-bold text-[var(--brand)]">📞 {tx(row.value)}</span>
+              <span className="flex items-center gap-1.5 text-sm font-bold text-[var(--brand)]">
+                {row.urgent ? <IconPhone className="h-4 w-4" /> : null}
+                {tx(row.value)}
+              </span>
             </a>
           ))}
         </div>
@@ -62,12 +65,12 @@ export default function InfosPage() {
         </div>
       </section>
 
-      <section className="rounded-[28px] bg-[linear-gradient(135deg,#3a7190_0%,#131415_100%)] p-5 text-white">
+      <section className="rounded-[28px] bg-brand-gradient p-5 text-white">
         <p className="font-[family-name:var(--font-display)] text-xl font-extrabold leading-tight">
           {hotel.fullName}
         </p>
         <p className="mt-2 text-sm text-white/70">{hotel.address}</p>
-        <p className="mt-4 text-sm font-bold text-[#7dbfd3]">📞 {hotel.phone}</p>
+        <p className="mt-4 text-sm font-bold text-[#7dbfd3]">{hotel.phone}</p>
         <div className="mt-5 flex items-center gap-3">
           <a
             href={hotel.instagramUrl}

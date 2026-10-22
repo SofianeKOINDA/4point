@@ -118,7 +118,10 @@ export default function Home() {
                 href={row.href}
                 className="rounded-2xl bg-[#fff1f0] px-3 py-3 text-center"
               >
-                <p className="text-lg font-extrabold text-[var(--brand)]">📞 {tx(row.value)}</p>
+                <p className="flex items-center justify-center gap-1.5 text-lg font-extrabold text-[var(--brand)]">
+                  <IconPhone className="h-4 w-4" />
+                  {tx(row.value)}
+                </p>
                 <p className="mt-0.5 text-[11px] font-semibold text-[var(--muted)]">
                   {tx(row.label)}
                 </p>
@@ -244,7 +247,7 @@ export default function Home() {
         <section className="px-5 pb-2">
           <Link
             href="/infos"
-            className="block rounded-[28px] bg-[linear-gradient(135deg,#3a7190_0%,#131415_100%)] p-5 text-white"
+            className="block rounded-[28px] bg-brand-gradient p-5 text-white"
           >
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/55">
               Guest Guide
