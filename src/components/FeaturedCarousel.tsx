@@ -24,7 +24,9 @@ export function FeaturedCarousel() {
       ? "/ten"
       : item.id === "chicafrique"
         ? "/restau/chic-afrique"
-        : "/#hotel";
+        : item.id === "meeting"
+          ? "/#meeting"
+          : "/#hotel";
 
   return (
     <section className="px-5 pt-2">

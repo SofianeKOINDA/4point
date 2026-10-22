@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { DiningContact } from "@/components/DiningContact";
 import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { SectionCarousel } from "@/components/SectionCarousel";
@@ -177,8 +178,13 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Contact réservation & Bonvoy — partagé avec les fiches restau */}
+        <section className="space-y-4 px-5">
+          <DiningContact />
+        </section>
+
         {/* Salles de réunion — noms & photos fournis par l'hôtel */}
-        <section className="px-5">
+        <section id="meeting" className="scroll-mt-24 px-5">
           <div className="mb-3">
             <h2 className="section-title">{t("meetingTitle")}</h2>
             <p className="mt-1 text-sm text-[var(--muted)]">{t("meetingSubtitle")}</p>

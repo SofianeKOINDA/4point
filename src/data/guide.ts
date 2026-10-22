@@ -58,6 +58,26 @@ export const featured = [
     cta: { fr: "Découvrir", en: "Discover" },
   },
   {
+    id: "spa",
+    title: { fr: "Spa & bien-être", en: "Spa & wellness" },
+    subtitle: {
+      fr: "Sauna · détente",
+      en: "Sauna · relaxation",
+    },
+    image: "/hotel/spa.jpg",
+    cta: { fr: "Découvrir", en: "Discover" },
+  },
+  {
+    id: "meeting",
+    title: { fr: "Salles de réunion", en: "Meeting rooms" },
+    subtitle: {
+      fr: "El Hadj Omar Tall · Nelson Mandela",
+      en: "El Hadj Omar Tall · Nelson Mandela",
+    },
+    image: "/hotel/meeting/omar-tall.jpg",
+    cta: { fr: "Découvrir", en: "Discover" },
+  },
+  {
     id: "lobby",
     title: { fr: "Lobby & lounge", en: "Lobby & lounge" },
     subtitle: {
