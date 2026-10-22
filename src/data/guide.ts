@@ -423,7 +423,7 @@ export const activities: GuideItem[] = [
       en: "Hotel fitness center",
     },
     image: "/hotel/fitness.jpg",
-    tag: { fr: "Sur place", en: "On site" },
+    tag: { fr: "15 000 XOF", en: "15,000 XOF" },
   },
 ];
 
