@@ -264,7 +264,7 @@ export const diningVenues: DiningVenue[] = [
     id: "fp-social",
     name: "FP Social",
     tag: { fr: "Restaurant", en: "Restaurant" },
-    hours: "6h30 – 23h",
+    hours: "24h/24",
     image: "/hotel/fp-restaurant-1.jpg",
     gallery: ["/hotel/fp-restaurant-2.jpg"],
     schedule: [
@@ -284,7 +284,7 @@ export const diningVenues: DiningVenue[] = [
     id: "fp-social-bar",
     name: "FP Social Bar",
     tag: "Bar",
-    hours: "6h30 – 23h",
+    hours: "24h/24",
     image: "/hotel/bar.jpg",
     teaser: {
       fr: "Cocktails · Best Brews · Sports",
@@ -839,6 +839,14 @@ export const practical: InfoRow[] = [
       en: "Adapter at reception",
     },
   },
+ {
+    label: { fr: "Support Informatique", en: "IT Support" },
+    value: {
+      fr: "Contact via réception",
+      en: "Contact via reception",
+    },
+  },
+
   {
     label: "Laundry",
     value: {
