@@ -103,8 +103,8 @@ export const featured = [
     id: "restaurant",
     title: "FP Social",
     subtitle: {
-      fr: "Restaurant · 6h30 – 23h",
-      en: "Restaurant · 6:30am – 11pm",
+      fr: "Restaurant · 6h30 – 22h30",
+      en: "Restaurant · 6:30am – 10:30pm",
     },
     image: "/hotel/fp-restaurant-1.jpg",
     cta: { fr: "Découvrir", en: "Discover" },
@@ -117,6 +117,16 @@ export const featured = [
       en: "Outdoor pool",
     },
     image: "/hotel/pool.jpg",
+    cta: { fr: "Y aller", en: "Go" },
+  },
+  {
+    id: "fitness",
+    title: "Fitness",
+    subtitle: {
+      fr: "Salle de sport 24h",
+      en: "24h fitness center",
+    },
+    image: "/hotel/fitness.jpg",
     cta: { fr: "Y aller", en: "Go" },
   },
 ];
@@ -264,7 +274,7 @@ export const diningVenues: DiningVenue[] = [
     id: "fp-social",
     name: "FP Social",
     tag: { fr: "Restaurant", en: "Restaurant" },
-    hours: "24h/24",
+    hours: "6h30 – 22h30",
     image: "/hotel/fp-restaurant-1.jpg",
     gallery: ["/hotel/fp-restaurant-2.jpg"],
     schedule: [
